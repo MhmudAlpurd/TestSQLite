@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/edittext_bg"
+        android:fontFamily="@font/iransans_medium"
+        android:hint="نام"
+        android:paddingEnd="15dp"
+        android:textColorHint="@color/white" />
+
+    <EditText
+
+        android:id="@+id/edt_family"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_bg"
+        android:fontFamily="@font/iransans_medium"
+        android:hint="  نام خانوادگی"
+        android:paddingEnd="15dp"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/edt_id"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_bg"
+        android:fontFamily="@font/iransans_medium"
+        android:hint="  شماره پرسنلی"
+        android:paddingEnd="15dp"
+        android:textColorHint="@color/white" />
+
+    <Button
+        android:id="@+id/btn_insert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/iransans_bold"
+        android:padding="5dp"
+        android:text="اضافه"
+        android:textColor="@color/blue"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/iransans_bold"
+        android:text="حذف"
+        android:textColor="@color/blue"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/btn_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/iransans_bold"
+        android:text="نمایش"
+        android:textColor="@color/blue"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/iransans_bold"
+        android:text="آپدیت"
+        android:textColor="@color/blue"
+        android:textSize="18dp" />
+
+
+</LinearLayout>
