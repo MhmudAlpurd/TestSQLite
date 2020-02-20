@@ -53,6 +53,47 @@ public class MainActivity extends AppCompatActivity {
                 showData();
             }
         });
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateData();
+            }
+        });
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteData();
+            }
+        });
+
+    }
+
+    private void updateData() {
+
+        String uID = edt_id.getText().toString();
+        String uName = edt_name.getText().toString();
+        String uFamily = edt_family.getText().toString();
+
+
+        Person uperson = new Person();
+        uperson.pID = uID;
+        uperson.pName = uName;
+        uperson.pFamily = uFamily;
+        dbm.updatePerson(uperson);
+    }
+
+    private void deleteData() {
+
+        String delID = edt_id.getText().toString();
+        Person dperson = new Person();
+        dperson.pID = delID;
+        boolean del = dbm.deletePerson(dperson);
+
+        if (del == true) {
+            Toast.makeText(this, "اطلاعات حذف شد.", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "در حذف اطلاعات مشکلی پیش آمده است.", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -70,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setDataintoModel() {
         Person iperson = new Person();
-        iperson.pID =mID;
+        iperson.pID = mID;
         iperson.pName = mName;
         iperson.pFamily = mFamily;
         dbm.insertperson(iperson);
@@ -83,9 +124,9 @@ public class MainActivity extends AppCompatActivity {
         mName = edt_name.getText().toString();
         mFamily = edt_family.getText().toString();
 
-        if (TextUtils.isEmpty(mID)||TextUtils.isEmpty(mName)||TextUtils.isEmpty(mFamily)) {
+        if (TextUtils.isEmpty(mID) || TextUtils.isEmpty(mName) || TextUtils.isEmpty(mFamily)) {
             Toast.makeText(this, "لطفا تمام فیلدها را حل کنید!", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             setDataintoModel();
         }
 
@@ -100,8 +141,6 @@ public class MainActivity extends AppCompatActivity {
         btn_update = findViewById(R.id.btn_update);
         btn_view = findViewById(R.id.btn_view);
     }
-
-
 
 
 }

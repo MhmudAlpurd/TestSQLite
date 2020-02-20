@@ -69,9 +69,22 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
         SQLiteDatabase udb = this.getWritableDatabase();
         ContentValues ucv = new ContentValues();
-        ucv.put(dName,uprs.pName);
-        ucv.put(dFamily,uprs.pFamily);
-
-
+        ucv.put(dName, uprs.pName);
+        ucv.put(dFamily, uprs.pFamily);
+        udb.update(TableName, ucv, dID + " = ?", new String[]{String.valueOf(uprs.pID)});
     }
+
+    public boolean deletePerson(Person dprs) {
+        SQLiteDatabase ddb = this.getWritableDatabase();
+        long dResult = ddb.delete(TableName, dID + "=?", new String[]{String.valueOf(dprs.pID)});
+
+
+        if (dResult == 0 ){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+
 }
